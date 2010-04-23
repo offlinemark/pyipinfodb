@@ -31,7 +31,9 @@ def GetIPInfo(baseurl, ip=None, timezone=False) :
     """Same as GetCity and GetCountry, but a baseurl is required.  This is for if you want to use a different server that uses the the php scripts on ipinfodb.com."""
     passdict = {"output":"json"}
     if ip :
-        passdict["ip"] = socket.gethostbyaddr(ip)[2][0]
+        try :
+            passdict["ip"] = socket.gethostbyaddr(ip)[2][0]
+        except passdict["ip"] = ip
     if timezone :
         passdict["timezone"] = "true"
     else :
