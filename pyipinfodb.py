@@ -33,7 +33,7 @@ def GetIPInfo(baseurl, ip=None, timezone=False) :
     if ip :
         try :
             passdict["ip"] = socket.gethostbyaddr(ip)[2][0]
-        except passdict["ip"] = ip
+        except : passdict["ip"] = ip
     if timezone :
         passdict["timezone"] = "true"
     else :
