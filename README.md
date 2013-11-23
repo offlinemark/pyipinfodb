@@ -1,6 +1,7 @@
 # pyipinfodb.py
 
-This is a simple python wrapper around the [IPInfoDB](http://ipinfodb.com/) [API](http://ipinfodb.com/ip_location_api.php) which is a free IP geolocation API. In order to use it, you need to get an [api key](http://ipinfodb.com/register.php).
+This is a simple python wrapper around the [IPInfoDB](http://ipinfodb.com/) [API](http://ipinfodb.com/ip_location_api.php) which is a free IP geolocation API.  
+In order to use it, you need to get an [api key](http://ipinfodb.com/register.php).
 
 ## getting started
 
@@ -13,12 +14,12 @@ This wrapper is super easy to use. Just import it (make sure the script is in yo
     >>> import pyipinfodb
     >>> ip_lookup = pyipinfodb.IPInfo('<apikey>')
     >>> ip_lookup.get_country('74.125.45.100')
-    {u'countryName': u'UNITED STATES', u'ipAddress': u'74.125.45.100', u'countryCode': u'US', u'statusMessage':         u'', u'statusCode': u'OK'}
+    {u'countryName': u'UNITED STATES', u'ipAddress': u'74.125.45.100', u'countryCode': u'US', u'statusMessage': u'', u'statusCode': u'OK'}
 
 ## documentation
 
 
-### `get_country(self, ip=None)`
+#### `get_country(self, ip=None)`
 
 Return a dictionary with country information based on ip address passed as parameter. Example output:
 
@@ -26,7 +27,7 @@ Return a dictionary with country information based on ip address passed as param
 
 If no parameters are passed, returns information about the client ip making the request.
 
-### `get_city(self, ip=None)`
+#### `get_city(self, ip=None)`
 
 Return a dictionary with detailed country, city, and timezone information based on ip address passed as parameter. Example output:
 
@@ -36,7 +37,7 @@ If no parameters are passed, returns information about the client ip making the 
 
 Avoid using this function if you don't need this level of detail, it helps keep the load lower on IPInfoDB's servers :)
 
-### `get_ip_info(self, baseurl, ip=None)`
+#### `get_ip_info(self, baseurl, ip=None)`
 
 This is the backend that powers the above functions. It lets you specify a base url to use for your requests. You probably won't need to use this function.
 
