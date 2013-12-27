@@ -1,9 +1,8 @@
 from nose.tools import *
 import pyipinfodb
+import secrets
 
-key_file = open('api.key', 'r')
-apikey = key_file.read()
-apikey = apikey.replace('\n', '')
+apikey = secrets.apikey
 i = pyipinfodb.IPInfo(apikey)
 
 def test_country():
