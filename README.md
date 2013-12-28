@@ -1,45 +1,34 @@
 # pyipinfodb.py
 
-This is a simple python wrapper around the [IPInfoDB](http://ipinfodb.com/) [API](http://ipinfodb.com/ip_location_api.php)
-which is a free IP geolocation API.  
+This is a simple python wrapper around [IPInfoDB](http://ipinfodb.com/)'s free IP address geolocation [API](http://ipinfodb.com/ip_location_api.php).   
 In order to use it, you need to get an [api key](http://ipinfodb.com/register.php).
 
 ## getting started
 
-This wrapper is super easy to use. If you just want to try it out: download this repo as a zip, unzip, and in change to 
-that directory in your terminal.
+This wrapper is super easy to use.
+If you just want to try it out: download this repo as a zip, unzip, and change to that directory in your terminal.
 Then in a python interpreter: import it, instantiate an IPInfo object using your api key, and you're ready to go!
 In this example, replace `<apikey>` with your api key.
 
+    $ curl -L -O https://github.com/markmossberg/pyipinfodb/archive/master.zip
+    $ unzip master.zip
+    $ cd pyipinfodb-master
     $ python
-    Python 2.7.5 (default, Aug 25 2013, 00:04:04)
-    [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
-    Type "help", "copyright", "credits" or "license" for more information.
     >>> import pyipinfodb
     >>> ip_lookup = pyipinfodb.IPInfo('<apikey>')
-    >>> ip_lookup.get_country('74.125.45.100')
-    {u'countryName': u'UNITED STATES', u'ipAddress': u'74.125.45.100', u'countryCode': u'US', u'statusMessage': u'', u'statusCode': u'OK'}
+    >>> ip_lookup.get_country('8.8.8.8')
+    {u'countryName': u'UNITED STATES', u'ipAddress': u'8.8.8.8', u'countryCode': u'US', u'statusMessage': u'', u'statusCode': u'OK'}
 
 ## installation
 
 If you want to use this in a real project, you need to install the package.
-The recommended way to do this is to first use [virtualenv](https://pypi.python.org/pypi/virtualenv) to create an
-isolated Python environment so you don't mess up your system environment. Then you can use [pip](https://pypi.python.org/pypi/pip)
-to install the package straight from this github repo.
+You can use [pip](https://pypi.python.org/pypi/pip) to install the package straight from this github repo.
 
-    $ mkdir awesome_project
-    $ cd awesome_project
-    $ virtualenv venv
-    $ . venv/bin/activate
-    (venv)$ pip install git+git://github.com/markmossberg/pyipinfodb.git
-    (venv)$ python
-    Python 2.7.5 (default, Aug 25 2013, 00:04:04)
-    [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> import pyipinfodb
-    >>>
-    (venv)$ deactivate
-    $
+    $ pip install git+git://github.com/markmossberg/pyipinfodb.git
+
+Or you can manually run the `setup.py` file in the zip file.
+
+    $ python setup.py install
 
 ## documentation
 
@@ -67,3 +56,6 @@ Avoid using this function if you don't need this level of detail, it helps keep 
 
 This is the backend that powers the above functions. It lets you specify a base url to use for your requests. You probably won't need to use this function.
 
+## contributing
+
+Feel free to contribute! Just clone the repo using `git clone https://github.com/markmossberg/pyipinfodb.git` and install dependencies using `pip install -r requirements.txt`. Simply run `nosetests` to run tests. I recommend using [virtualenv](http://www.virtualenv.org/) to create an isolated python environment for development.
