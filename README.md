@@ -58,4 +58,10 @@ This is the backend that powers the above functions. It lets you specify a base 
 
 ## contributing
 
-Feel free to contribute! Just clone the repo using `git clone https://github.com/markmossberg/pyipinfodb.git` and install dependencies using `pip install -r requirements.txt`. Simply run `nosetests` to run tests. I recommend using [virtualenv](http://www.virtualenv.org/) to create an isolated python environment for development.
+Feel free to contribute! Just clone the repo using `git clone https://github.com/markmossberg/pyipinfodb.git` and install dependencies using `pip install -r requirements.txt`. I recommend using [virtualenv](http://www.virtualenv.org/) to create an isolated python environment for development.
+
+### tests
+
+Edit the `secrets.py.example` file and replace `<apikey>` with your key. Then rename the file to `secrets.py`. Now you can simply run tests with:
+
+    $ nosetests
