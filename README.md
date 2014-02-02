@@ -1,7 +1,13 @@
 # pyipinfodb.py
 
-This is a simple python wrapper around [IPInfoDB](http://ipinfodb.com/)'s free IP address geolocation [API](http://ipinfodb.com/ip_location_api.php).   
+This is a simple python wrapper around [IPInfoDB](http://ipinfodb.com/)'s
+free IP address geolocation [API](http://ipinfodb.com/ip_location_api.php).   
 In order to use it, you need to get an [api key](http://ipinfodb.com/register.php).
+
+*Note: This repo was originally forked from 
+[here](https://github.com/sonicrules1234/pyipinfodb) but since that account
+no longer seems to be active, I've taken things into my own hands 
+and created a new repo for (relatively) active development of this API wrapper.*
 
 ## getting started
 
