@@ -5,8 +5,14 @@
 """
 
 import json
-from urllib import urlencode
-import urllib2
+try:
+    from urllib import urlencode
+except ImportError:
+    from urllib.parse import urlencode
+try:
+    import urllib2
+except ImportError:
+    import urllib.request as urllib2
 import socket
 
 class IPInfo() :
@@ -32,7 +38,7 @@ class IPInfo() :
         urlobj = urllib2.urlopen(url)
         data = urlobj.read()
         urlobj.close()
-        datadict = json.loads(data)
+        datadict = json.loads(data.decode('utf-8'))
         return datadict
 
     def get_country(self, ip=None):
