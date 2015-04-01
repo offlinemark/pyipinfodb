@@ -38,7 +38,7 @@ class IPInfo() :
         urlobj = urllib2.urlopen(url)
         data = urlobj.read()
         urlobj.close()
-        datadict = json.loads(data)
+        datadict = json.loads(data.decode('utf-8'))
         return datadict
 
     def get_country(self, ip=None):
