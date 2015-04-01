@@ -5,8 +5,14 @@
 """
 
 import json
-from urllib import urlencode
-import urllib2
+try:
+    from urllib import urlencode
+except ImportError:
+    from urllib.parse import urlencode
+try:
+    import urllib2
+except ImportError:
+    import urllib.request as urllib2
 import socket
 
 class IPInfo() :
